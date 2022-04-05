@@ -1,0 +1,12 @@
+syntax = "proto3";
+import "google/protobuf/wrappers.proto";
+package Concubine;
+
+message imperial_concubine
+{
+     uint32  num = 1;
+     string  name = 2;
+    google.protobuf.DoubleValue  age = 3;
+}
+
+

@@ -1,0 +1,39 @@
+syntax = "proto3";
+import "ImperialConcubine.proto";
+import "google/protobuf/wrappers.proto";
+package Family;
+
+enum gender_type
+{
+	MALE	= 0;
+	FEMALE	= 1;
+}
+
+message emperor
+{
+//    enum gender_type
+//    {
+//        MALE    = 0;
+//        FEMALE    = 1;
+//    };
+    uint32	num = 1;
+    sint64	name = 2;
+    gender_type gender = 3;
+    oneof dynasty
+    {
+        int64 Tang = 11;
+        google.protobuf.DoubleValue Song = 12;
+        string Yuan = 13;
+        string Ming = 14;
+        string Qing = 15;
+    }
+    repeated Concubine.imperial_concubine concubines = 4;
+    fixed64 father_age = 5;
+    sfixed64 mother_age = 6;
+    float pa_mother_age = 7;
+    double pa_father_age = 8;
+    bytes pre_name = 9;
+    Concubine.imperial_concubine conc = 10;
+    map<string, int32> infomations = 18;
+}
+
